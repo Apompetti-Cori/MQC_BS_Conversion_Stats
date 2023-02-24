@@ -13,6 +13,152 @@ from multiqc.modules.base_module import BaseMultiqcModule
 # Initialise the main MultiQC logger
 log = logging.getLogger('multiqc')
 
+
+headers = OrderedDict()
+
+headers['Percent_Methylated_All'] = {
+    'suffix': '%',
+    'format': '{:,.2f}'
+}
+
+headers['Percent_Methylated_CpG'] = {
+    'suffix': '%',
+    'format': '{:,.2f}'
+}
+
+headers['Lambda_Percent_Methylated_All'] = {
+    'suffix': '%',
+    'format': '{:,.2f}'}
+
+headers['Lambda_Percent_Methylated_CpG'] = {
+    'suffix': '%',
+    'format': '{:,.2f}'
+}
+
+headers['Methylated_All'] = {
+    'hidden': True 
+}        
+
+headers['Unmethylated_All'] = {
+    'hidden': True      
+} 
+
+headers['Methylated_CpG'] = {
+    'hidden': True      
+} 
+
+headers['Unmethylated_CpG'] = {
+    'hidden': True      
+} 
+
+headers['Methylated_nonCpG'] = {
+    'hidden': True      
+} 
+
+headers['Unmethylated_nonCpG'] = {
+    'hidden': True      
+} 
+
+headers['Percent_Methylated_nonCpG'] = {
+    'hidden': True,
+    'suffix': '%',
+    'format': '{:,.2f}'
+}
+
+headers['Lambda_Methylated_All'] = {
+    'hidden': True      
+}
+
+headers['Lambda_Unmethylated_All'] = {
+    'hidden': True      
+}
+
+headers['Lambda_Methylated_CpG'] = {
+    'hidden': True      
+}
+
+headers['Lambda_Unmethylated_CpG'] = {
+    'hidden': True      
+}
+
+headers['Lambda_Methylated_nonCpG'] = {
+    'hidden': True      
+}
+
+headers['Lambda_Unmethylated_nonCpG'] = {
+    'hidden': True      
+}
+
+headers['Lambda_Percent_Methylated_nonCpG'] = {
+    'hidden': True,
+    'suffix': '%',
+    'format': '{:,.2f}'
+}
+
+headers['z'] = {
+    'hidden': True      
+}
+
+headers['Z'] = {
+    'hidden': True      
+}
+
+headers['x'] = {
+    'hidden': True      
+}
+
+headers['X'] = {
+    'hidden': True      
+}
+
+headers['h'] = {
+    'hidden': True      
+}
+
+headers['H'] = {
+    'hidden': True      
+}
+
+headers['u'] = {
+    'hidden': True      
+}
+
+headers['U'] = {
+    'hidden': True      
+}
+
+headers['z_lambda'] = {
+    'hidden': True      
+}
+
+headers['Z_lambda'] = {
+    'hidden': True      
+}
+
+headers['x_lambda'] = {
+    'hidden': True      
+}
+
+headers['X_lambda'] = {
+    'hidden': True      
+}
+
+headers['h_lambda'] = {
+    'hidden': True      
+}
+
+headers['H_lambda'] = {
+    'hidden': True      
+}
+
+headers['u_lambda'] = {
+    'hidden': True      
+}
+
+headers['U_lambda'] = {
+    'hidden': True      
+}
+
 class MultiqcModule(BaseMultiqcModule):
 
     def __init__(self):
@@ -55,7 +201,7 @@ class MultiqcModule(BaseMultiqcModule):
         self.write_data_file(self.bs_conversion_stats_data, 'multiqc_my_example')
 
         #Create a very basic table
-        table_html = table.plot(self.bs_conversion_stats_data)
+        table_html = table.plot(self.bs_conversion_stats_data, headers)
 
         #Add a report section with said table
         self.add_section(
