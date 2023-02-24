@@ -18,7 +18,7 @@ setup(
     long_description = __doc__,
     keywords = 'bioinformatics',
     url = '',
-    download_url = '',
+    download_url = 'https://github.com/Apompetti-Cori/MQC_BS_Conversion_Stats',
     license = '',
     packages = find_packages(),
     include_package_data = True,
@@ -27,7 +27,7 @@ setup(
     ],
     entry_points = {
         'multiqc.modules.v1': [
-            'my_example = bs_conversion_stats.modules.my_example:MultiqcModule',
+            'bs_conversion_stats = bs_conversion_stats.modules.bs_conversion_stats:MultiqcModule',
         ],
         'multiqc.cli_options.v1': [
             'disable_plugin = bs_conversion_stats.cli:disable_plugin'

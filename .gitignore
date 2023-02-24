@@ -1,0 +1,14 @@
+._.DS_Store
+.DS_Store
+*.cpython*
+SOURCES.txt
+PKG-INFO
+entry_points.txt
+dependency_links.txt
+top_level.txt
+requires.txt
+._multiqc_report.html
+multiqc_report.html
+multiqc_data/
+multiqc_data/*
+test_data/
